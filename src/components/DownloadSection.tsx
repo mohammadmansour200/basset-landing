@@ -29,7 +29,7 @@ function DownloadSection() {
   }, [downloadAssets]);
 
   return (
-    <section id="download" className="flex justify-center mx-10 flex-col">
+    <section id="download" className="flex justify-center mx-10 mt-4 flex-col">
       <GateKeeperNotice />
       <div className="min-[700px]:justify-around mt-10 flex flex-col min-[700px]:flex-row gap-2">
         <div className="flex flex-col items-center gap-2 whitespace-nowrap">

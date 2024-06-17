@@ -1,6 +1,8 @@
 {
   "head": "Basset (simple in Arabic) is a free open-source Desktop app for cutting, compressing, converting Video/Audio files",
   "downloadBtn": "Download Basset",
+  "noticeMac": "A dialog with 'Basset cannot be opened....' written in it can appear, and this is because Apple requires me to buy a certificate for the App",
+  "noticeWin": "A dialog with 'Windows protected your PC' written in it may appear, just click 'Learn more' then click 'Run anyway'; in later versions this will be removed",
   "features": {
     "featuresLabel": "Why Basset?",
     "simplicity": "Simplicity ✨",

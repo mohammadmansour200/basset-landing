@@ -20,7 +20,7 @@ function GateKeeperNotice() {
   return (
     <div
       dir="auto"
-      className="flex mt-4 gap-2 items-center text-center bg-muted rounded-md p-4 border border-white text-sm w-fit"
+      className="flex m-auto gap-2 items-center text-center bg-muted rounded-md p-4 border border-white text-sm w-fit"
     >
       <div>
         <svg

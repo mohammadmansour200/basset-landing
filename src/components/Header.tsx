@@ -12,10 +12,17 @@ function Header() {
     <header className="w-full border-b border-border fixed top-0 bg-background z-10">
       <div className="flex items-center justify-between mx-4">
         <div>
-          <img src="/typography.webp" width="80" alt="Header logo" />
+          <img
+            src="/typography.webp"
+            width="98"
+            height="66"
+            className="w-20"
+            alt="Header logo"
+          />
         </div>
         <div className="flex items-center gap-3">
           <select
+            aria-label="Language"
             value={i18n.language}
             onChange={onLanguageSelectChange}
             name="language"
@@ -25,7 +32,10 @@ function Header() {
             <option value="ar">عربي</option>
           </select>
           <div>
-            <a href="https://github.com/mohammadmansour200/basset">
+            <a
+              aria-label="Source code"
+              href="https://github.com/mohammadmansour200/basset"
+            >
               <svg
                 width="26"
                 height="26"

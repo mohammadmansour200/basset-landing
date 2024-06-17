@@ -15,5 +15,8 @@
     "languageDesc": "Currently translated into Arabic and English, with the possibility of additional languages in the future (contributors welcome).",
     "lightweight": "Lightweight 🪶",
     "lightweightDesc": "Small in size and easy to install and use."
+  },
+  "footer": {
+    "contact": "Contact me"
   }
 }

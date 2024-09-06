@@ -1,0 +1,29 @@
+{
+	"description": "Basset is a free Ads-free open-source Desktop and Mobile app for cutting, compressing, converting Video/Audio files",
+	"head": "Basset (simple in Arabic) is a free Ads free open-source Desktop and Mobile app for cutting, compressing, converting Video/Audio files",
+	"downloadBtn": "Download Basset",
+	"noticeMac": "A dialog with 'Basset cannot be opened....' written in it can appear, and this is because Apple requires me to buy a certificate for the App",
+	"noticeWin": "A dialog with 'Windows protected your PC' written in it may appear, just click 'Learn more' then click 'Run anyway'; in later versions this will be removed",
+	"mobileHeader": "Mobile",
+	"desktopHeader": "Desktop",
+	"features": {
+		"featuresLabel": "Why Basset?",
+		"adsFree": "Ad-Free 📢",
+		"adsFreeDesc": "Enjoy a completely ad-free experience, free from annoying interruptions.",
+		"simplicity": "Simplicity ✨",
+		"simplicityDesc": "Easy-to-use and straightforward interface, designed for smooth interaction without complexity.",
+		"offline": "Offline support 🌐",
+		"offlineDesc": "Efficiently operates whether the internet connection is weak or strong, without needing to be connected.",
+		"speed": "Speed ⚡",
+		"speedDesc": "Most operations are performed quickly.",
+		"privacy": "Privacy 🔏",
+		"privacyDesc": "All operations are performed internally using your device; no data of any kind is collected.",
+		"language": "Multi-lingual 🌍",
+		"languageDesc": "Currently translated into Arabic and English, with the possibility of additional languages in the future (contributors welcome).",
+		"lightweight": "Lightweight 🪶",
+		"lightweightDesc": "Small in size and easy to install and use."
+	},
+	"footer": {
+		"contact": "Contact me"
+	}
+}

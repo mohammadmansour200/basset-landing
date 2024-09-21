@@ -9,7 +9,7 @@ async function HeadSection() {
 	const dict = await getDictionary(lang);
 	return (
 		<section className="flex justify-center items-center flex-col">
-			<Image src={appIcon} className="w-[250px]" alt="Logo" />
+			<Image src={appIcon} priority className="w-[250px]" alt="Logo" />
 			<p className="font-medium text-center" dir="auto">
 				{dict.head}
 			</p>

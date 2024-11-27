@@ -5,7 +5,8 @@ export interface IAssets {
 
 export async function fetchDesktopJsonData() {
   const res = await fetch(
-    "https://api.github.com/repos/mohammadmansour200/basset/releases/latest"
+    "https://api.github.com/repos/mohammadmansour200/basset/releases/latest",
+    { next: { revalidate: 43200 } }
   );
   const data = await res.json();
 

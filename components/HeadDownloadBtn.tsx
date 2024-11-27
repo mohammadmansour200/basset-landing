@@ -10,12 +10,14 @@ import { useMemo, useState } from "react";
 interface HeadDownloadBtnProps {
   btnText: string;
   mobileDownloadLink: string;
+  ffmpegNoticeText: string;
   desktopDownloadLink: IAssets[];
 }
 
 function HeadDownloadBtn({
   btnText,
   mobileDownloadLink,
+  ffmpegNoticeText,
   desktopDownloadLink,
 }: HeadDownloadBtnProps) {
   const [downloadPath, setDownloadPath] = useState("");
@@ -43,15 +45,22 @@ function HeadDownloadBtn({
   }, []);
 
   return (
-    <a
-      href={downloadPath}
-      className="flex gap-1 mt-2 border border-border rounded-md px-6 py-2 transition-all duration-300 hover:bg-muted/40 items-center"
-    >
-      {os === "Windows" && <Windows width="30" />}
-      {os === "Linux" && <Linux width="30" />}
-      {os === "Android" && <Android width="30" />}
-      {btnText}
-    </a>
+    <div className="flex items-center flex-col">
+      <a
+        href={downloadPath}
+        className="flex gap-1 mt-2 border border-border rounded-md px-6 py-2 transition-all duration-300 hover:bg-muted/40 items-center"
+      >
+        {os === "Windows" && <Windows width="30" />}
+        {os === "Linux" && <Linux width="30" />}
+        {os === "Android" && <Android width="30" />}
+        {btnText}
+      </a>
+      {os === "Linux" && (
+        <p dir="auto" className="my-3">
+          {ffmpegNoticeText}
+        </p>
+      )}
+    </div>
   );
 }
 

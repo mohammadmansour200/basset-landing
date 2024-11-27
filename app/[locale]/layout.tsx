@@ -1,5 +1,6 @@
 import "../globals.css";
 
+import { Rubik } from "next/font/google";
 import {
   getMessages,
   getTranslations,
@@ -9,6 +10,12 @@ import {
 import { NextIntlClientProvider } from "next-intl";
 import { notFound } from "next/navigation";
 import { Locale, routing } from "@/i18n/routing";
+
+// If loading a variable font, you don't need to specify the font weight
+const rubik = Rubik({
+  subsets: ["arabic"],
+  display: "swap",
+});
 
 export async function generateMetadata({
   params: { locale },
@@ -78,7 +85,7 @@ export default async function RootLayout({
   const messages = await getMessages();
 
   return (
-    <html lang={locale}>
+    <html lang={locale} className={rubik.className}>
       <body>
         <NextIntlClientProvider messages={messages}>
           {children}

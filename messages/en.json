@@ -2,6 +2,7 @@
   "description": "Basset is a free open-source app for instruments removal, cutting, compressing, converting Video/Audio files",
   "head": "Free open-source app for AI instruments removal, cutting, compressing, converting Video/Audio files",
   "headAllPlatforms": "All platforms",
+  "headFFmpeg": "Don't forget to install FFmpeg.",
   "downloadBtn": "Download Basset",
   "noticeMac": "A dialog with 'Basset cannot be opened....' written in it can appear, and this is because Apple requires me to buy a certificate for the App",
   "noticeWin": "A dialog with 'Windows protected your PC' written in it may appear, just click 'Learn more' then click 'Run anyway'; in later versions this will be removed",
@@ -10,7 +11,7 @@
   "features": {
     "featuresLabel": "Why Basset?",
     "musicRemove": "AI instruments removal 🤖",
-    "musicRemoveDesc": "Unlimited, free, Offline (Windows only)",
+    "musicRemoveDesc": "Unlimited, free, Offline (Windows and Linux only)",
     "adsFree": "Ad-Free 📢",
     "adsFreeDesc": "Enjoy a completely ad-free experience, free from annoying interruptions.",
     "simplicity": "Simplicity ✨",

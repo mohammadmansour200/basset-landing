@@ -20,6 +20,7 @@ async function HeadSection() {
         {t("head")}
       </p>
       <HeadDownloadBtn
+        ffmpegNoticeText={t("headFFmpeg")}
         mobileDownloadLink={mobileDownloadLink}
         desktopDownloadLink={desktopDownloadLink}
         btnText={t("downloadBtn")}

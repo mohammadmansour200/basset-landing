@@ -1,6 +1,6 @@
 import "../globals.css";
 
-import { Rubik } from "next/font/google";
+import { IBM_Plex_Sans_Arabic } from "next/font/google";
 import {
   getMessages,
   getTranslations,
@@ -11,10 +11,10 @@ import { NextIntlClientProvider } from "next-intl";
 import { notFound } from "next/navigation";
 import { Locale, routing } from "@/i18n/routing";
 
-// If loading a variable font, you don't need to specify the font weight
-const rubik = Rubik({
+const IBMPlexSansArabic = IBM_Plex_Sans_Arabic({
   subsets: ["arabic"],
   display: "swap",
+  weight: "500",
 });
 
 export async function generateMetadata({
@@ -29,17 +29,24 @@ export async function generateMetadata({
     description: t("description"),
 
     twitter: {
-      images: "https://i.imgur.com/NLbi3nc.png",
+      images:
+        "https://raw.githubusercontent.com/mohammadmansour200/basset-landing/refs/heads/main/public/mockup.webp",
       title: "بسيط - Basset",
       description: t("description"),
     },
     openGraph: {
-      images: "https://i.imgur.com/NLbi3nc.png",
+      images:
+        "https://raw.githubusercontent.com/mohammadmansour200/basset-landing/refs/heads/main/public/mockup.webp",
       title: "بسيط - Basset",
       description: t("description"),
     },
     keywords: [
       "convert",
+      "spleeter",
+      "spleetergui",
+      "music remover",
+      "حذف الموسيقى",
+      "حذف الموسيقي",
       "cut",
       "trim",
       "compress",
@@ -73,19 +80,16 @@ export default async function RootLayout({
   children: React.ReactNode;
   params: { locale: string };
 }) {
-  // Ensure that the incoming `locale` is valid
   if (!routing.locales.includes(locale as any)) {
     notFound();
   }
 
   setRequestLocale(locale || routing.defaultLocale);
 
-  // Providing all messages to the client
-  // side is the easiest way to get started
   const messages = await getMessages();
 
   return (
-    <html lang={locale} className={rubik.className}>
+    <html lang={locale} className={IBMPlexSansArabic.className}>
       <body>
         <NextIntlClientProvider messages={messages}>
           {children}

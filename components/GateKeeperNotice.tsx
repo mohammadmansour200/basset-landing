@@ -1,9 +1,27 @@
+"use client";
+import { useEffect, useState } from "react";
 import { useTranslations } from "next-intl";
-import GateKeeperNoticeText from "./GateKeeperNoticeText";
+import { getOs } from "@/utils/getOs";
 
 function GateKeeperNotice() {
   const t = useTranslations();
 
+  const [platform, setPlatform] = useState("");
+
+  useEffect(() => {
+    function checkPlatform() {
+      if (platform !== "") return;
+      if (navigator.userAgent.toUpperCase().indexOf("MAC") !== -1) {
+        setPlatform("mac");
+      }
+      if (getOs() === "Windows") {
+        setPlatform("windows");
+      }
+    }
+    checkPlatform();
+  }, [platform]);
+
+  if (platform !== "mac" && platform !== "windows") return null;
   return (
     <div
       dir="auto"
@@ -25,10 +43,8 @@ function GateKeeperNotice() {
           </g>
         </svg>
       </div>
-      <GateKeeperNoticeText
-        noticeMac={t("noticeMac")}
-        noticeWin={t("noticeWin")}
-      />
+      {platform === "mac" && <p>{t("noticeMac")}</p>}
+      {platform === "windows" && <p>{t("noticeWin")}</p>}
     </div>
   );
 }

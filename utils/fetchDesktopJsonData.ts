@@ -11,10 +11,10 @@ export async function fetchDesktopJsonData() {
   const data = await res.json();
 
   const installers = (data.assets as IAssets[])?.filter(
-    (assets) =>
-      !assets.name.includes("zip") &&
-      !assets.name.includes("tar") &&
-      !assets.name.includes("json")
+    (asset) =>
+      !asset.name.includes("zip") &&
+      !asset.name.includes("tar") &&
+      !asset.name.includes("json")
   );
   return installers;
 }

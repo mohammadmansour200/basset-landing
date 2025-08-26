@@ -1,5 +1,3 @@
-import typography from "@/public/typography.webp";
-import Image from "next/image";
 import LanguageSelect from "./LanguageSelect";
 import { Locale } from "@/i18n/routing";
 import { getLocale } from "next-intl/server";
@@ -11,7 +9,22 @@ async function Header() {
     <header className="w-full border-b border-border fixed top-0 bg-background z-10">
       <div className="flex items-center justify-between mx-4">
         <div>
-          <Image src={typography} className="w-20" alt="Header logo" />
+          <svg
+            className="w-12"
+            fill="currentColor"
+            viewBox="0 0 50 50"
+            version="1.1"
+            id="svg1"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlnsXlink="http://www.w3.org/2000/svg"
+          >
+            <defs id="defs1" />
+            <path
+              d="m 28.10856,20.359735 h 3.109094 c 2.914781,0 5.133252,-0.285321 6.655414,-0.855959 1.522163,-0.602345 2.283245,-1.141283 2.283245,-1.616815 0,-0.824258 -0.275288,-1.64852 -0.825858,-2.472776 -0.518179,-0.855959 -1.182102,-1.600962 -1.991763,-2.235007 L 40.593529,5 c 0.971596,1.2997943 1.667905,2.7739474 2.088921,4.4224634 0.421028,1.6485186 0.631536,3.2811806 0.631536,4.8979956 0,2.821499 -0.534374,3.813118 -1.603127,6.222489 -1.068749,2.377665 -2.098721,3.12302 -4.074293,4.581319 -1.943183,1.458306 -4.767199,1.736281 -7.487663,1.736281 H 28.10856 c -3.161234,0 -3.174048,-6.500813 0,-6.500813 z m 8.121069,10.336363 c 2.137502,1.458304 3.886373,3.170222 5.246603,5.135763 l -5.246603,5.088211 C 35.54951,39.937306 34.77224,39.017938 33.897804,38.161977 33.023372,37.337719 32.067974,36.561013 31.031607,35.831861 Z m -8.121069,-3.83555 c 0,0 -21.877876,-0.07926 -23.10856,-0.237787 0.09678,0.03863 2.282291,-6.263056 2.282291,-6.263056 h 20.826251 c 3.71002,0 -1.93371,3.27796 0,6.50081 z"
+              id="text1"
+              aria-label="بسيط"
+            />
+          </svg>
         </div>
         <div className="flex items-center gap-3">
           <LanguageSelect language={lang} />

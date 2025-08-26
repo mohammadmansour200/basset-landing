@@ -9,15 +9,13 @@ import { useMemo, useState } from "react";
 
 interface HeadDownloadBtnProps {
   btnText: string;
-  mobileDownloadLink: string;
-  ffmpegNoticeText: string;
+  mobileDownloadLink: IAssets[];
   desktopDownloadLink: IAssets[];
 }
 
 function HeadDownloadBtn({
   btnText,
   mobileDownloadLink,
-  ffmpegNoticeText,
   desktopDownloadLink,
 }: HeadDownloadBtnProps) {
   const [downloadPath, setDownloadPath] = useState("");
@@ -30,7 +28,10 @@ function HeadDownloadBtn({
 
   useMemo(() => {
     if (os === "Android") {
-      setDownloadPath(mobileDownloadLink);
+      setDownloadPath(
+        mobileDownloadLink.find((assets) => assets.name.includes("arm64-v8a"))
+          ?.browser_download_url as string
+      );
     } else if (os === "Windows") {
       setDownloadPath(
         desktopDownloadLink.find((assets) => assets.name.includes("msi"))
@@ -45,22 +46,16 @@ function HeadDownloadBtn({
   }, []);
 
   return (
-    <div className="flex items-center flex-col">
-      <a
-        href={downloadPath}
-        className="flex gap-1 mt-2 border border-border rounded-md px-6 py-2 transition-all duration-300 hover:bg-muted/40 items-center"
-      >
-        {os === "Windows" && <Windows width="30" />}
-        {os === "Linux" && <Linux width="30" />}
-        {os === "Android" && <Android width="30" />}
-        {btnText}
-      </a>
-      {os === "Linux" && (
-        <p dir="auto" className="my-3">
-          {ffmpegNoticeText}
-        </p>
-      )}
-    </div>
+    <a
+      dir="auto"
+      href={downloadPath}
+      className="flex gap-1 border border-border rounded-md px-6 py-2 transition-all duration-300 hover:bg-muted/40 items-center"
+    >
+      {os === "Windows" && <Windows width="30" />}
+      {os === "Linux" && <Linux width="30" />}
+      {os === "Android" && <Android width="30" />}
+      <span>{btnText}</span>
+    </a>
   );
 }
 
